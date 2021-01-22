@@ -1,5 +1,5 @@
 
-export function menu(){
+export function displayMenu(){
   const content = document.querySelector('#content')
 
   const menuContainer = document.createElement('div')

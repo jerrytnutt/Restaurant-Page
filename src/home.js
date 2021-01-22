@@ -1,5 +1,5 @@
 
-export function myFunction() { 
+export function displayHome() { 
     const content = document.querySelector("#content");
 
     const homeContainer = document.createElement("div")

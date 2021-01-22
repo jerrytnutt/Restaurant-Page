@@ -1,31 +1,33 @@
-import {myFunction} from '/src/home.js';
-import {menu} from '/src/menu.js'
-import {contact} from '/src/cotact.js'
+import {displayHome} from '/src/home.js';
+import {displayMenu} from '/src/menu.js'
+import {displayContact} from '/src/contact.js'
+
 const content = document.querySelector('#content')
 
-const home = document.querySelector('#home')
-const menubut = document.querySelector('#menu')
-const cbut = document.querySelector('#contact')
+const homeTab = document.querySelector('#home')
+const menuTab = document.querySelector('#menu')
+const contactTab = document.querySelector('#contact')
 
-home.addEventListener('click',() => {
-
+function clearDisplay(){
+    const content = document.querySelector('#content')
     while (content.hasChildNodes()) {
         content.removeChild(content.lastChild);
     }
-    myFunction()
-});
-menubut.addEventListener('click',() => {
 
-    while (content.hasChildNodes()) {
-        content.removeChild(content.lastChild);
-    }
-    menu()
-});
-cbut.addEventListener('click',() => {
+}
+homeTab.addEventListener('click',() => {
 
-    while (content.hasChildNodes()) {
-        content.removeChild(content.lastChild);
-    }
-    contact()
+    clearDisplay()
+    return displayHome()
 });
-myFunction()
+menuTab.addEventListener('click',() => {
+
+    clearDisplay()
+    return displayMenu()
+});
+contactTab.addEventListener('click',() => {
+
+    clearDisplay()
+    return displayContact()
+});
+displayHome()
